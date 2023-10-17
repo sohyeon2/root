@@ -1,4 +1,5 @@
 package section1;
+import java.util.Scanner;
 
 public class java_20231017 {
 
@@ -54,11 +55,53 @@ public class java_20231017 {
 		//자료형 변수이름 = 값;
 		//System.out.println();
 		boolean student = true;
-		
 		System.out.println(student);
 		
+		//자동 형 변환
+		//1. char -> short -> int -> long
+		//2. 정수 -> 소수
+		//int형 num1 선언한다 14을 값을 저장하세요
+		//double num2 선언하고 num1 대입하세요.
+		//num2 변수를 프린트 하자.
 		
-		 
+		int num1 = 14;
+		double num2 = num1;
+		System.out.println(num2);
+		
+		//강제 형 변환
+		
+		int num3 = 10;
+		byte num4 = (byte)num3;
+		System.out.println(num4); //손실이 없다. 값의 범위 2n-1->27-1=127
+		
+		int num5 = 1000;
+		byte num6 = (byte)num5; //8bit = 2_7=128-1=127
+		System.out.println(num6); //손실이 있다. 자료형에 해당하는 byte
+		
+		//입력 받기 : new Scanner(System.in);
+		
+		//Scanner 객체 선언
+		Scanner input = new Scanner(System.in);
+		
+		//입력 받기 (해당 자료형 선언 변수명 =input.해당자료함수)
+		//이름 주소 나이 체중을 빈칸으로 구분해서 입력받고 출력하기
+		System.out.println("이름 주소 나이 체중을 빈칸으로 구분해서 입력받고 출력하기");
+		//이름 주소 =String\
+		//나이 = int
+		//체중 = doule
+		String name, address;
+		int age;
+		double weight;
+		
+		name = input.next(); //이름
+		address = input.next(); //주소
+		age = input.nextInt();
+		weight = input.nextDouble();
+		
+		System.out.println("당신의 이름:" + name + "입니다.");
+		System.out.println("당신의 주소:" + address + "입니다.");
+		System.out.println("당신의 나이:" + age + "입니다.");
+		System.out.println("당신의 체중은:" + weight + "입니다.");
 	}
 
 }
